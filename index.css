@@ -1,0 +1,13 @@
+#right,#left{
+    border:1px solid #aaa;
+    float:left;
+    height:100vh;
+    width:48%;
+}
+#handle{
+    background:#000;
+    float:left;
+    height:100vh;
+    margin:1px;
+    width:2%;
+}
