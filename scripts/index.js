@@ -58,3 +58,4 @@ function generateTreeHTML(assembly,$parentElement,level,childNode){
 		
 	});
 }
+

@@ -1,0 +1,35 @@
+<html ng-app="poaEditApp">
+
+<head>
+    <title>POA Edit Angular App</title>
+    <script src="scripts/jquery.js"></script>
+    <script src="scripts/jquery-ui.js"></script>
+    <script src="scripts/angular.js"></script>
+    <script src="scripts/angular-route.js"></script>
+    <script src="scripts/bootstrap.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/poaEdit.css">
+    <link rel="stylesheet" type="text/css" href="css/dropDown.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <!--Custom Includes-->
+    <script src="scripts/poaEdit.js"></script>
+    <script src="scripts/poaEditJQuery.js"></script>
+</head>
+
+<body style="padding:5px 5px">
+    <header>
+        <div class="panel panel-primary">
+            <div class="panel-heading heading">
+                Filter Elements <input type="text" ng-model="artworkElementFilter" placeholder="Search"> </div>
+        </div>
+        <div class="input-group"> </div>
+    </header>
+    <section>
+        <div ng-controller="poaEditController" ng-view="" id="mainWindow"></div>
+    </section>
+    <footer> </footer>
+</body>
+
+</html>
+
+</html>
