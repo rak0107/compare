@@ -1,0 +1,91 @@
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <script>
+        angular.module('freezePane', ['ngRoute'])
+            .controller('tableDataController', function ($scope, $http) {
+
+
+                // Service Request to fetch the JSON Elements.
+                $http.get('JSON/elementsJSON.json')
+                    .success(function (response) {
+                        $scope.artworkElements = response;
+                    })
+
+            });
+    </script>
+    <style>
+        table,
+        td {
+            width: 100%;
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        
+        .fixedColums {
+            display: block;
+        }
+        
+        .cell{
+            width: 200px;
+        }
+        
+        table tbody {
+            display: block;
+            height: 50%;
+            overflow: auto;
+        }
+        
+        thead {
+            background-color: aqua
+        }
+        
+        .freeze{
+         
+          
+        }
+    </style>
+
+</head>
+
+<body ng-app="freezePane" ng-controller="tableDataController">
+    <form>
+        <table>
+            <thead>
+
+                <tr class="fixedColums">
+                    <th>
+                        <td class="cell freeze">Element Type </td>
+                        <td class="cell ">Element Text</td>
+                        <td class="cell ">Element State </td>
+                        <td class="cell">Element Language </td>
+                    </th>
+                    <th>
+                        <td class="cell">POA </td>
+                        <td class="cell">POA </td>
+                        <td class="cell">POA </td>
+                        <td class="cell">POA </td>
+                        <td class="cell">POA </td>
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="artworkElement in artworkElements">
+                    <td class="cell freeze"> {{artworkElement.type}}</td>
+                    <td class="cell"> {{artworkElement.copyText}}</td>
+                    <td class="cell"> {{artworkElement.lc_currentstate}}</td>
+                    <td class="cell"> {{artworkElement.languagename}}</td>
+                    <td class="cell"> {{artworkElement.copyText}}</td>
+                    <td class="cell"> {{artworkElement.copyText}}</td>
+                    <td class="cell"> {{artworkElement.copyText}}</td>
+                    <td class="cell"> {{artworkElement.copyText}}</td>
+                    <td class="cell"> {{artworkElement.copyText}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </form>
+</body>
+
+</html>
